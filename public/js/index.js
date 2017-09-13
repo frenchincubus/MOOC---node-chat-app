@@ -15,11 +15,3 @@ socket.on('disconnect', () => {
 socket.on('newMessage', function (message){
   console.log('new message', message);
 });
-
-socket.on('welcomeMessage', function (message) {
-  console.log(message);
-});
-
-socket.on('userJoin', function (message) {
-  console.log(message);
-});
