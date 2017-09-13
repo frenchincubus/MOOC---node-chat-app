@@ -28,13 +28,15 @@ io.on('connection', function (socket) {
 //     console.log('User was disconnected');
 //   });
 
-socket.on('newMessage', (message) => {
-  console.log('new message:', message);
-  socket.emit('message', {
-     name: 'lio',
-     text: 'response back',
-    createdAt: 123
+socket.on('createMessage', (message) => {
+  console.log('createMessage:', message);
+  io.emit('newMessage', {
+    from: message.from,
+    text: message.text,
+    createdAt: new Date().getTime()
   });
+
+
 })
 });
 
